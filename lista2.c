@@ -66,7 +66,6 @@ float Raiz(float a, float b, float c, float delta){        // Raiz positiva
 }
 
 
-
 int main(){
 	float a = 0, b = 0, c = 0;
 	printf("\nProgramação e Desenvolvimento de Software 1\nLista 2: Procedimentos e funções\n\n");
