@@ -2,7 +2,6 @@
 Programação e Desenvolvimento de Software 1
 Lista 2: Procedimentos e funções
 Nome: Lucas Albano Olive Cruz
-Matrícula: 2022036209
 */
 
 #include <stdio.h>
@@ -84,7 +83,7 @@ int main(){
 	float delta=0;          
 	delta = pow(b,2)-4*a*c;   // Calculo de delta de a, b e c
 	if (delta < 0){
-		printf("Raiz positiva da equação do segundo grau definida por ax²+bx+c: A equação não possui raizes reais\n");
+		printf("Raiz positiva da equação do segundo grau definida por ax²+bx+c: A equação não possui raízes reais\n");
 	} else {
 		printf("Raiz positiva da equação do segundo grau definida por ax²+bx+c: %f\n", Raiz(a, b, c, delta));
 	}
