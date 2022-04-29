@@ -50,7 +50,7 @@ int Dentro(int num1, int num2, int num3){                       // Verifica se x
 }
 
 
-int Bissexto(int ano){
+int Bissexto(int ano){                                          // Testa se o ano é bissexto
 	if(ano%4 == 0 && ano%100 != 0){
 		return 1;
 	}
