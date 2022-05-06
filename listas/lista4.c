@@ -57,18 +57,49 @@ int Primo(int num){                                        // Testa se o número
 }
 
 
+int Decrescente(int num){                                  // Imprime uma sequência decrescente desde num até 0
+    printf("%d, ", num);
+    if(num==0){
+        return 0;
+    }
+    else{
+       return Decrescente(num - 1);
+    }
+}
+
+
+int Resto(int num1, int num2){                             // Retorna o resto de a por b *Recursão pra que??
+    return num1%num2;
+}
+
+
+int Form(int num){                                         // Retorna o somatório de 1 até num
+    if(num==0){
+        return 0;
+    }
+    else{
+        return num + Form(num-1);
+    }
+}
+
+
 int main(){
     int num=0, a=0, b=0, c=0;
+    // 1-a)
     printf("Digite um número inteiro (recomendado um valor pequeno):\n");
     scanf("%d", &num);
     printf("O fatorial de %d é %d.\n", num,Fat(num));
+    // 1-b)
     printf("Digite 3 números inteiros (a, b, c): \n");
     scanf("%d%d%d",&a,&b,&c);
     printf("O máximo divisor comum entre %d e %d é: %d\n", a, b, Mdc(a,b));
+    // 1-c)
     printf("O máximo divisor comum entre %d, %d e %d é: %d\n", a, b, c, Mdc(Mdc(a,b), c));
+    // 1-d)
     printf("Descubra o n-ésimo termo da sequência de Fibonacci\nDigite o n-ésimo termo:\n");
     scanf("%d",&num);
     printf("O termo %d da sequencia de Fibonacci é: %d\n", num, Fib(num));
+    // 1-e)
     printf("Descubra se um número é primo\nDigite o número inteiro:\n");
     scanf("%d", &num);
     if(Primo(num)){
@@ -77,5 +108,18 @@ int main(){
     else{
         printf("%d não é primo\n", num);
     }
+    // 1-f)
+    printf("Veja uma sequência de inteiros positivos menores que 'x'\nDigite o número inteiro 'x':\n");
+    scanf("%d",&num);
+    Decrescente(num);
+    // 1-g)
+    printf("\nDigite dois números inteiros para saber o resto da divisão deles:\n");
+    scanf("%d%d", &a, &b);
+    printf("O resto da divisão de %d por %d é: %d\n", a, b, Resto(a,b));
+    // 1-h)
+    printf("Veja o somatório de i*i, com i variando de 1 até n\nDigite 'n' (valor inteiro):\n");
+    scanf("%d", &num);
+    printf("O resultado do somatório será: %d\n", Form(num)*Form(num));                //OBS: Não sei se está correto, ainda não tive Cálculo 1
+
     return 0;
 }
