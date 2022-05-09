@@ -83,6 +83,35 @@ int Form(int num){                                         // Retorna o somatór
 }
 
 
+int Mmc(int num1, int num2){                               // Menor Múltiplo Comum
+    if(num2 == 0){
+        return num1;
+    }
+    else{
+        return (num1*num2)/(Mdc(num1, num2));
+    }
+}
+
+
+int Div(int num1, int num2){                               // Divisão inteira
+    return num1/num2;
+}
+
+
+int Sqrt(int num){                                         // Raiz Quadrada Inteira
+    static int x=1;
+    if(x*x == num){
+        return x;
+    }
+    else if(x*x > num){
+        return x-1;
+    }
+    else{
+        x++;
+        Sqrt(num);
+    }
+}
+
 int main(){
     int num=0, a=0, b=0, c=0;
     // 1-a)
@@ -120,6 +149,19 @@ int main(){
     printf("Veja o somatório de i*i, com i variando de 1 até n\nDigite 'n' (valor inteiro):\n");
     scanf("%d", &num);
     printf("O resultado do somatório será: %d\n", Form(num)*Form(num));                //OBS: Não sei se está correto, ainda não tive Cálculo 1
+    // 1-i)
+    printf("Digite dois números inteiros para saber o MMC deles:\n");
+    scanf("%d%d", &a, &b);
+    printf("O MMC de %d e %d é: %d\n", a, b, Mmc(a,b));
+    // 1-j)
+    printf("Digite dois números inteiros para saber a divisão inteira deles:\n");
+    scanf("%d%d", &a, &b);
+    printf("O resultado da divisão inteira de %d por %d é: %d\n", a, b, Div(a,b));
+    // 1-l)
+    printf("Digite um número para saber sua raiz quadrada inteira:\n");
+    scanf("%d", &num);
+    printf("A raiz quadrada inteira de %d é: %d\n", num, Sqrt(num));
+
 
     return 0;
 }
