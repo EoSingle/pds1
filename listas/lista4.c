@@ -2,7 +2,6 @@
 Programação e Desenvolvimento de Software 1
 Lista 4: Recursão
 Nome: Lucas Albano Olive Cruz
-A lista ainda não está terminada!!!
 */
 
 #include<stdio.h>
@@ -93,7 +92,7 @@ int Mmc(int num1, int num2){                               // Menor Múltiplo Co
 }
 
 
-int Div(int num1, int num2){                               // Divisão inteira
+int Div(int num1, int num2){                               // Divisão inteira **Recursão pra que??
     return num1/num2;
 }
 
@@ -111,6 +110,40 @@ int Sqrt(int num){                                         // Raiz Quadrada Inte
         Sqrt(num);
     }
 }
+
+
+int Dig(int num){                                          // Retorna a soma dos dígitos de um inteiro positivo
+    if(num%10==num){
+        return num;
+    }
+    else{
+        return((num%10)+Dig(num/10));
+    }
+}
+
+
+int Exp(int a, int b){                                     // Exponencial de 'a' elevado a 'b'
+    if(b==0){
+        return 1;
+    }
+    else{
+        return a * Exp(a, b-1);
+    }
+}
+
+
+int Crescente(int num){                                    // Imprime uma sequência crescente desde 0 até num
+    static int i=0;
+    if(i>num){
+        return 0;
+    }
+    else{
+        printf("%d, ", i);
+        i++;
+        return Crescente(num);
+    }
+}
+
 
 int main(){
     int num=0, a=0, b=0, c=0;
@@ -138,7 +171,7 @@ int main(){
         printf("%d não é primo\n", num);
     }
     // 1-f)
-    printf("Veja uma sequência de inteiros positivos menores que 'x'\nDigite o número inteiro 'x':\n");
+    printf("Veja uma sequência decrescente de inteiros positivos menores que 'x'\nDigite o número inteiro 'x':\n");
     scanf("%d",&num);
     Decrescente(num);
     // 1-g)
@@ -161,7 +194,19 @@ int main(){
     printf("Digite um número para saber sua raiz quadrada inteira:\n");
     scanf("%d", &num);
     printf("A raiz quadrada inteira de %d é: %d\n", num, Sqrt(num));
-
+    // 1-m)
+    printf("Digite um número para saber a soma de seus digitos:\n");
+    scanf("%d", &num);
+    printf("A soma dos digitos de %d é: %d\n", num, Dig(num));
+    // 1-n)
+    printf("Digite um valor inteiro 'a' e um inteiro 'b' para saber o valor de 'a' elevado a 'b':\n");
+    scanf("%d%d", &a,&b);
+    printf("O valor de %d elevado a %d é: %d\n", a, b, Exp(a,b));
+    //1-o)
+    printf("Veja uma sequencia crescente de todos os numeros maiores que 0 e menores ou iguais a 'n'\nDigite 'n':\n");
+    scanf("%d", &num);
+    Crescente(num);
+    printf("\n");
 
     return 0;
 }
