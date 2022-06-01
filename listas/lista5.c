@@ -52,7 +52,6 @@ int Primo(int num){                                        // Testa se o número
 			return 0;
 		}
 	}
-	
 }
 
 
