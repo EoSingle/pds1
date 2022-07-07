@@ -13,6 +13,7 @@ Meus programas feitos durante a matéria de PDS1 na faculdade
 - Lista 7: Vetores
 - Não existe lista 8
 - Lista 9: Matrizes
+- Lista 10: Registros
 
 ### Simulados
 - Prova 1: Estruturas básicas, funções e recursividade
