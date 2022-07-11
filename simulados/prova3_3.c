@@ -59,12 +59,12 @@ int main(){                        // O programa não foi testado pois não era 
     printf("Digite qual a distância máxima do restaurante:\n");
     scanf("%d", &raio);
     printf("Restaurantes encontrados:\n");
-    FilterRange(restaurantes[], len, raio);
+    FilterRange(restaurantes, len, raio);
 
     printf("Digite qual o preço máximo do restaurante:\n");
     scanf("%d", &price);
     printf("Restaurantes encontrados:\n");
-    FilterPrice(restaurantes[], len, raio, price);
+    FilterPrice(restaurantes, len, raio, price);
 
     fclose(fp);
     return 0;
