@@ -18,5 +18,6 @@ Meus programas feitos durante a matéria de PDS1 na faculdade
 ### Simulados
 - Prova 1: Estruturas básicas, funções e recursividade
 - Prova 2: Estruturas de repetição, arquivos e vetores
+- Prova 3: Registros
 
 Obs: Os arquivos .txt são usados durante exercícios com arquivos e os arquivos .exe são os programas já compilados.
