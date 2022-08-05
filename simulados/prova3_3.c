@@ -17,7 +17,7 @@ struct Restaurante{
     int x;
     int y;
     int level;
-}
+};
 
 void FilterRange(struct Restaurante restaurantes[], int len, int raio){                  // a)
     for(int i=0; i<len; i++){
@@ -39,18 +39,21 @@ int main(){                        // O programa não foi testado pois não era 
     FILE* fp;                      // o importante é a lógica do struct e das funções "Filter".
     int len, raio, price;
 
+    fp = fopen("lista_restaurante.txt", "r+t");
+    if(fp==NULL){
+        printf("Erro na abertura do arquivo 'restaurantes.txt'.\n");
+        fclose(fp);
+        return 1;
+    }
+
     printf("Informe o número de restaurantes no arquivo:\n");
     scanf("%d", &len);
     struct Restaurante restaurantes[len];
 
-    fp = fopen("restaurantes.txt", "r+t");
-    if(fp==NULL){
-        printf("Erro na abertura do arquivo 'restaurantes.txt'.\n");
-        fclose(fp);
-    }
+    
 
     for(int i=0; i<len; i++){
-        fscanf(fp, "%s", &restaurantes[i].name);
+        fgets(restaurantes[i].name, 50, fp);
         fscanf(fp, "%d", &restaurantes[i].x);
         fscanf(fp, "%d", &restaurantes[i].y);
         fscanf(fp, "%d", &restaurantes[i].level);
